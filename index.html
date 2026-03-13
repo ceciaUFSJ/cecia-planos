@@ -353,6 +353,11 @@ Cada pasta representa um semestre, núcleo curricular ou conjunto de unidades cu
 </p>
 </div>
 
+
+ <div id="data-atualizacao" class="aviso">Carregando data de atualização...</div>
+<div id="content">Carregando...</div>
+
+  
 <div id="content">Carregando...</div>
 
 </div>
@@ -407,7 +412,8 @@ async function render(folder,isPPC){
 
   box.appendChild(h);
   box.appendChild(c);
-  content.appendChild(box);
+document.getElementById("content").appendChild(box);
+  
 }
 
 load();
