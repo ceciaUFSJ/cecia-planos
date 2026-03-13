@@ -413,6 +413,31 @@ async function render(folder,isPPC){
 load();
 </script>
 
+
+  
+<!-- ================= DATA DE ATUALIZACAO ================= -->
+<script>
+const DOC_DATA_ATUALIZACAO =
+  "https://docs.google.com/document/d/1Rp7xZ5VHPEeBVh97Z-pQzJ3At1DYVMol/export?format=txt";
+
+async function carregarDataAtualizacao(){
+  try{
+    const r = await fetch(DOC_DATA_ATUALIZACAO);
+    const t = (await r.text()).split(/\r?\n/).filter(l=>l.trim()).join(" ");
+    document.getElementById("data-atualizacao").innerHTML =
+      "<strong>Última atualização:</strong> " + t;
+  }catch{
+    document.getElementById("data-atualizacao").textContent =
+      "Última atualização: informação indisponível.";
+  }
+}
+
+carregarDataAtualizacao();
+</script>
+
+
+  
+
 <div class="footer">
 Repositório institucional mantido pela CECIA – UFSJ.
 </div>
